@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Leo Goldfarb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBFAF8;color:#3A3B52;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#EE4E2E;text-decoration:none}
+a:hover{color:#C93A1E}
+*:focus-visible{outline:2px solid #EE4E2E;outline-offset:3px;border-radius:6px}
+@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes heroScale{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<div style="position:fixed;top:0;left:0;right:0;height:3px;z-index:50;background:transparent;pointer-events:none">
+  <div style="height:100%;width:{{ progressPct }};background:#EE4E2E;transition:width 80ms linear"></div>
+</div>
+<sc-if value="{{ showMarker }}" hint-placeholder-val="{{ true }}">
+  <div aria-hidden="true" style="position:fixed;top:16px;right:16px;z-index:40;display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:9999px;background:#FFFFFF;border:1px solid #E7E8EE;font:500 12px/16px Inter,sans-serif;color:#16172B;letter-spacing:.01em;font-variant-numeric:tabular-nums;box-shadow:0 4px 16px rgba(22,23,43,.06)">
+    <span style="color:#EE4E2E;font-weight:600">{{ markerNum }}</span>
+    <span style="color:#7A7C8F">/ 06</span>
+    <span style="width:3px;height:3px;border-radius:50%;background:#7A7C8F"></span>
+    <span>{{ markerName }}</span>
+  </div>
+</sc-if>
+
+<main>
+
+<!-- 01 Hero -->
+
+
+<!-- 02 Story -->
+<section data-chapter="0" data-screen-label="01 Hero" style="box-sizing:border-box;padding:48px clamp(20px,5vw,64px) 0;max-width:1120px;margin:0 auto">
+<div style="box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,7vw,88px) clamp(24px,6vw,88px);background:#FFFFFF;border:2px solid #EE4E2E;border-radius:32px;box-shadow:0 24px 40px rgba(22,23,43,.06)">
+  <div style="width:112px;height:112px;border-radius:50%;overflow:hidden;background:#F7F8FA;animation:heroScale 900ms cubic-bezier(.2,.7,.2,1) 80ms both">
+    <img src="assets/leonid-portrait.png" alt="Leo Goldfarb" style="display:block;width:112px;height:112px;object-fit:cover;object-position:55% 30%">
+  </div>
+  <p style="margin:28px 0 0;font:600 12px/16px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3A3B52;display:flex;align-items:center;gap:10px;animation:heroIn 800ms cubic-bezier(.2,.7,.2,1) 220ms both"><span style="width:20px;height:2px;background:#EE4E2E"></span>Leo Goldfarb<a href="https://www.linkedin.com/in/leo-goldfarb-7b743449/" target="_blank" rel="noopener" aria-label="Leo Goldfarb on LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-left:-6px;border-radius:8px;color:#3A3B52;transition:color 150ms ease,background 150ms ease" style-hover="color:#EE4E2E;background:#FDEDE8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"></rect><path d="M8 10.5V16M8 7.8v.2M11.5 16v-3.2c0-1.4 1-2.3 2.2-2.3s2.3.9 2.3 2.3V16M11.5 10.5V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></a></p>
+  <h1 style="margin:20px 0 0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(40px,6.4vw,84px);line-height:.98;letter-spacing:-.035em;color:#16172B;animation:heroIn 1000ms cubic-bezier(.2,.7,.2,1) 340ms both">The story about companies,<br><span>teams &amp; systems</span></h1>
+  <p style="margin:18px 0 0;font-family:Newsreader,Georgia,serif;font-size:clamp(20px,2.2vw,26px);line-height:1.2;letter-spacing:-.01em;color:#7A7C8F;animation:heroIn 1000ms cubic-bezier(.2,.7,.2,1) 440ms both">featuring an original guitar soundtrack by me&nbsp;🎸🎸🎸</p>
+  <p style="margin:36px 0 0;max-width:760px;font-family:Newsreader,Georgia,serif;font-size:clamp(20px,2.3vw,27px);line-height:1.3;letter-spacing:-.01em;color:#16172B;text-wrap:pretty;animation:heroIn 900ms cubic-bezier(.2,.7,.2,1) 560ms both">I build companies, teams, GTM systems and<br><span style="color:#EE4E2E">AI-powered ways of working.</span> <span style="color:#16172B">15+ years in digital marketing,<br>SaaS, sales, business operations, and AI.</span></p>
+  <div style="margin:18px 0 0;max-width:760px;animation:heroIn 900ms cubic-bezier(.2,.7,.2,1) 680ms both">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px">
+      <button type="button" onClick="{{ toggleAbout }}" aria-expanded="{{ aboutExpanded }}" style="all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:10px 12px 10px 18px;border-radius:14px;background:#EE4E2E;color:#FFFFFF;font:600 15px/20px Inter,sans-serif;transition:background 150ms ease,transform 150ms ease" style-hover="background:#D63E20;color:#FFFFFF" style-active="transform:scale(.98)">
+        <span>{{ aboutLabel }}</span>
+        <span aria-hidden="true" style="width:24px;height:24px;border-radius:50%;background:#FFFFFF;color:#EE4E2E;display:flex;align-items:center;justify-content:center">
+          <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="transform:rotate({{ aboutRot }});transition:transform 280ms ease"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
+        </span>
+      </button>
+    </div>
+    <div style="display:grid;grid-template-rows:{{ aboutRows }};transition:grid-template-rows 420ms cubic-bezier(.2,.7,.2,1)">
+      <div style="overflow:hidden;min-height:0;visibility:{{ aboutVis }}">
+        <div style="margin-top:24px;padding-top:24px;border-top:1px solid #E7E8EE;display:flex;flex-direction:column;gap:16px;opacity:{{ aboutOp }};transition:opacity 400ms ease 80ms">
+          <p style="margin:0;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">With 15+ years of experience across digital marketing, SaaS, sales, and business ops, I’ve spent my career figuring out how to make companies grow and how to make them work better.</p>
+          <p style="margin:0;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">I’ve worked across very different environments, from large organizations like Dentsu, Booking.com, and Yandex to fast-moving startups like Albato.</p>
+          <p style="margin:0;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">At Albato, I built the global GTM, sales, and business operations motion from scratch for a complex B2B SaaS product, taking it from an unknown regional startup to a recognized player in the global embedded iPaaS market.</p>
+          <p style="margin:0;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">I’m also increasingly obsessed with AI as a way to rethink how teams work. I’ve personally built and deployed 15+ AI agents that autonomously run NPS surveys, flag churn risks, manage CRM pipelines, score and qualify leads, evaluate sales performance, and more. I also vibe-coded and deployed an AI BDR that handles lead conversations and books meetings autonomously.</p>
+          <p style="margin:0;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">What I enjoy most is building things from the ground up: bringing people together, turning messy problems into working systems, and finding better, more efficient ways to get things done. I love being close to both the people and the problem - whether that means building a GTM motion from zero, redesigning a convoluted business process, putting together a new team, or getting my hands dirty with AI and vibe-coding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section><section id="story" data-chapter="1" data-screen-label="02 The story" style="padding:72px clamp(20px,5vw,64px) 120px;max-width:1120px;margin:0 auto">
+  <h2 style="margin:0;font:600 12px/16px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3A3B52;display:flex;align-items:center;gap:10px"><span style="width:20px;height:2px;background:#EE4E2E"></span>My story</h2>
+  <ol style="list-style:none;margin:32px 0 0;padding:0;border-top:1px solid #E7E8EE">
+    <sc-for list="{{ timeline }}" as="item" hint-placeholder-count="7">
+      <li style="border-bottom:1px solid #E7E8EE">
+        <button type="button" onClick="{{ item.toggle }}" aria-expanded="{{ item.ariaExpanded }}" style="all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:24px;row-gap:6px;padding:26px 0" style-hover="color:#EE4E2E">
+          <span style="flex:0 0 140px;font:500 13px/20px Inter,sans-serif;letter-spacing:.02em;color:#7A7C8F;font-variant-numeric:tabular-nums">{{ item.year }}</span>
+          <span style="flex:1 1 300px;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;column-gap:16px;row-gap:4px">
+            <span style="font-family:Newsreader,Georgia,serif;font-size:clamp(26px,3vw,34px);line-height:1.1;letter-spacing:-.015em;color:#16172B">{{ item.org }}</span>
+            <span style="font-size:15px;line-height:22px;color:#3A3B52">{{ item.role }}</span>
+            <span style="display:inline-flex;flex-wrap:wrap;gap:6px">
+              <sc-for list="{{ item.tagList }}" as="tg" hint-placeholder-count="2">
+                <span style="padding:3px 10px;border-radius:9999px;background:{{ tg.bg }};color:{{ tg.fg }};font:600 12px/18px Inter,sans-serif;letter-spacing:.01em;white-space:nowrap">{{ tg.t }}</span>
+              </sc-for>
+            </span>
+          </span>
+          <span aria-hidden="true" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;align-self:center;background:{{ item.chevBg }};transition:background 200ms ease">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="transform:rotate({{ item.rot }});transition:transform 280ms ease"><path d="M7 2v10M2 7h10" stroke="{{ item.chevStroke }}" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </span>
+        </button>
+        <div style="display:grid;grid-template-rows:{{ item.rows }};transition:grid-template-rows 420ms cubic-bezier(.2,.7,.2,1)">
+          <div style="overflow:hidden;min-height:0;visibility:{{ item.vis }}">
+            <div style="padding:8px 0 48px;display:flex;flex-wrap:wrap;column-gap:24px">
+              <span style="flex:0 0 140px"></span>
+              <div style="flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:40px">
+                <div style="display:flex;flex-wrap:wrap;gap:32px 44px;align-items:flex-start">
+                  <div style="flex:1.55 1 340px;min-width:0;opacity:{{ item.op }};transform:{{ item.tf }};transition:opacity 500ms ease 0ms,transform 600ms cubic-bezier(.2,.7,.2,1) 0ms">
+                    <p style="margin:0 0 16px;font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7A7C8F">What I did</p>
+                    <div style="display:flex;flex-direction:column;gap:16px">
+                      <sc-for list="{{ item.did }}" as="p" hint-placeholder-count="1">
+                        <p style="margin:0;font-family:Newsreader,Georgia,serif;font-size:clamp(21px,2.1vw,25px);line-height:1.38;letter-spacing:-.005em;color:#16172B;text-wrap:pretty"><sc-for list="{{ p }}" as="s" hint-placeholder-count="1"><sc-if value="{{ s.isText }}" hint-placeholder-val="{{ true }}"><span style="font-weight:{{ s.w }}">{{ s.t }}</span></sc-if><sc-if value="{{ s.isLink }}" hint-placeholder-val="{{ false }}"><a href="{{ s.href }}" target="_blank" rel="noopener" style="color:#EE4E2E;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px" style-hover="color:#C93A1E">{{ s.t }}</a></sc-if></sc-for></p>
+                      </sc-for>
+                    </div>
+                <sc-if value="{{ item.hasAch }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:36px;opacity:{{ item.op }};transform:{{ item.tf }};transition:opacity 500ms ease 220ms,transform 600ms cubic-bezier(.2,.7,.2,1) 220ms">
+                    <p style="margin:0 0 16px;font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7A7C8F">Key achievements</p>
+                    <ul style="list-style:none;margin:0;padding:0;columns:2 260px;column-gap:32px">
+                      <sc-for list="{{ item.ach }}" as="a" hint-placeholder-count="3">
+                        <li style="break-inside:avoid;display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #E7E8EE;font-size:15px;line-height:22px;color:#3A3B52">
+                          <span style="flex:0 0 6px;height:6px;margin-top:8px;border-radius:50%;background:#EE4E2E"></span>
+                          <span style="text-wrap:pretty"><sc-for list="{{ a }}" as="s" hint-placeholder-count="1"><span style="font-weight:{{ s.w }};color:{{ s.c }}">{{ s.t }}</span></sc-for></span>
+                        </li>
+                      </sc-for>
+                    </ul>
+                  </div>
+                </sc-if>
+                  </div>
+                  <sc-if value="{{ item.hasLearned }}" hint-placeholder-val="{{ true }}">
+                    <aside style="flex:1 1 260px;min-width:0;margin-top:28px;background:#FDEDE8;border-radius:24px;padding:28px;box-sizing:border-box;opacity:{{ item.op }};transform:{{ item.tf }};transition:opacity 500ms ease 120ms,transform 600ms cubic-bezier(.2,.7,.2,1) 120ms">
+                      <p style="margin:0 0 16px;font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#3A3B52">What I learned</p>
+                      <div style="display:flex;flex-direction:column;gap:14px">
+                        <sc-for list="{{ item.learned }}" as="p" hint-placeholder-count="1">
+                          <p style="margin:0;font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.45;color:#3A3B52;text-wrap:pretty"><sc-for list="{{ p }}" as="s" hint-placeholder-count="1"><span style="font-weight:{{ s.w }};color:{{ s.c }}">{{ s.t }}</span></sc-for></p>
+                        </sc-for>
+                      </div>
+                    </aside>
+                  </sc-if>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </sc-for>
+  </ol>
+</section>
+
+<!-- 03 AI -->
+<section data-chapter="2" data-screen-label="03 Then AI happened" style="background:#16172B;color:#FBFAF8;padding:128px clamp(20px,5vw,64px)">
+  <div style="max-width:1120px;margin:0 auto">
+    <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(52px,9vw,120px);line-height:.95;letter-spacing:-.035em;color:#FBFAF8">Then AI happened...</h2>
+    <p style="margin:40px 0 0;max-width:640px;font-size:17px;line-height:27px;color:#C9CAD6;text-wrap:pretty">And I’ve personally built and deployed <strong style="color: rgb(251, 250, 248); font-weight: 600;">15+ AI agents</strong> across multiple teams. They now handle 100% of repetitive work that used to eat up hours and hours of my and my team’s time.</p>
+    <button type="button" onClick="{{ toggleAgents }}" aria-expanded="{{ agentsExpanded }}" style="all:unset;box-sizing:border-box;margin-top:32px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:10px 12px 10px 18px;border-radius:14px;background:#EE4E2E;color:#FFFFFF;font:600 15px/20px Inter,sans-serif;transition:background 150ms ease,transform 150ms ease" style-hover="background:#D63E20;color:#FFFFFF" style-active="transform:scale(.98)">
+      <span>{{ agentsLabel }}</span>
+      <span aria-hidden="true" style="width:24px;height:24px;border-radius:50%;background:#FFFFFF;color:#EE4E2E;display:flex;align-items:center;justify-content:center">
+        <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="transform:rotate({{ agentsRot }});transition:transform 280ms ease"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
+      </span>
+    </button>
+    <div style="display:grid;grid-template-rows:{{ agentsRows }};transition:grid-template-rows 520ms cubic-bezier(.2,.7,.2,1)">
+      <div style="overflow:hidden;min-height:0;visibility:{{ agentsVis }}">
+        <div style="opacity:{{ agentsOp }};transition:opacity 400ms ease 100ms">
+
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px">
+      <sc-for list="{{ agents }}" as="a" hint-placeholder-count="6">
+        <article style="background:{{ a.bg }};border:1px solid {{ a.border }};border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:16px;box-sizing:border-box">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <span style="padding:4px 10px;border-radius:9999px;border:1px solid {{ a.tagBorder }};background:{{ a.tagBg }};font:600 12px/16px Inter,sans-serif;color:{{ a.tagFg }}">{{ a.tag }}</span>
+          </div>
+          <div>
+            <h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1.15;color:#FBFAF8">{{ a.name }}</h3>
+            <p style="margin:8px 0 0;font-size:15px;line-height:22px;color:{{ a.lineFg }};text-wrap:pretty">{{ a.line }}</p>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;align-items:stretch">
+      <a href="https://web-production-0e7481.up.railway.app/" target="_blank" rel="noopener" style="grid-column:1 / -2;min-width:0;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;padding:clamp(28px,4vw,44px);border-radius:24px;background:#20223C;border:1px solid #2C2E4D;color:#FBFAF8;text-decoration:none;transition:border-color 200ms ease,transform 200ms ease" style-hover="border-color:#EE4E2E;transform:translateY(-2px);color:#FBFAF8">
+      <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:12px">
+        <span style="display:inline-flex;align-items:center;gap:8px;font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#C9CAD6"><span style="width:8px;height:8px;border-radius:50%;background:#EE4E2E"></span>Dashboard &amp; docs</span>
+        <span style="font-family:Newsreader,Georgia,serif;font-size:clamp(30px,3.6vw,44px);line-height:1.05;letter-spacing:-.02em;color:#FBFAF8;text-wrap:pretty">Check out my vibe-coded agents</span>
+        <span style="font-size:15px;line-height:22px;color:#C9CAD6">The dashboard and documentation for every agent I've built.</span>
+        <span style="margin-top:4px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:9999px;background:#2C2E4D;font:500 13px/18px Inter,sans-serif;color:#FBFAF8"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="2" stroke="#EE4E2E" stroke-width="1.5"></rect><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="#EE4E2E" stroke-width="1.5" stroke-linecap="round"></path></svg>DM me for login and password for this dashboard</span>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:16px">
+        <span style="font:500 13px/16px Inter,sans-serif;color:#A3A5B8">web-production-0e7481.up.railway.app</span>
+        <span style="width:56px;height:56px;border-radius:50%;background:#EE4E2E;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M7.5 6H14v6.5" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
+      </div>
+    </a>
+      <a href="https://github.com/lgoldfarb-hub" target="_blank" rel="noopener" style="min-width:0;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:clamp(28px,4vw,44px);border-radius:24px;background:#20223C;border:1px solid #2C2E4D;color:#FBFAF8;text-decoration:none;transition:border-color 200ms ease,transform 200ms ease" style-hover="border-color:#EE4E2E;transform:translateY(-2px);color:#FBFAF8">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="#FBFAF8" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.1 10.1 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"></path></svg>
+          <span style="width:44px;height:44px;border-radius:50%;border:1px solid #3A3D63;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M7.5 6H14v6.5" stroke="#FBFAF8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:Newsreader,Georgia,serif;font-size:clamp(26px,2.8vw,34px);line-height:1.1;letter-spacing:-.015em;color:#FBFAF8">Agent repos on GitHub</span>
+          <span style="font:500 13px/16px Inter,sans-serif;color:#C9CAD6">github.com/lgoldfarb-hub</span>
+        </div>
+      </a>
+    </div>
+    <article style="margin-top:16px;background:#20223C;border:1px solid #2C2E4D;border-radius:24px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:36px">
+      <div style="display:flex;flex-wrap:wrap;gap:20px 48px;align-items:flex-start">
+        <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:12px">
+          <span style="align-self:flex-start;padding:4px 10px;border-radius:9999px;border:1px solid #9B6FE0;font:600 12px/16px Inter,sans-serif;color:#C4A6F5">Sales</span>
+          <h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.02em;color:#FBFAF8">Sales Performance Evaluation Agent</h3>
+          <p style="margin:4px 0 0;font-size:17px;line-height:25px;font-weight:600;color:#FBFAF8;text-wrap:pretty">I single-handedly built this multi-step, agentic workflow using my own product, <a href="https://albato.com/embedded" target="_blank" rel="noopener" style="color:#EE4E2E;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#FF7A5C">Albato</a>, and Claude Code.</p>
+        </div>
+        <p style="flex:1.4 1 380px;min-width:0;margin:0;font-size:17px;line-height:27px;color:#C9CAD6;text-wrap:pretty">It pulls call transcripts, analyzes and scores account executives' performance through a complex, multi-layered scoring model. An LLM judge verifies the output, and the final evaluation gets posted to Slack, giving the AE valuable coaching tips. A deal action plan is then created and synced to HubSpot to help the AE navigate the deal after the sales call.</p>
+      </div>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,120px),1fr));gap:20px 24px">
+          <li style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #34365A;padding-top:14px">
+            <span style="font:600 12px/16px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">01</span>
+            <span style="font-size:15px;line-height:22px;color:#FBFAF8">Pulls call transcripts</span>
+          </li>
+          <li style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #34365A;padding-top:14px">
+            <span style="font:600 12px/16px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">02</span>
+            <span style="font-size:15px;line-height:22px;color:#FBFAF8">Scores AE performance with a multi-layered model</span>
+          </li>
+          <li style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #34365A;padding-top:14px">
+            <span style="font:600 12px/16px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">03</span>
+            <span style="font-size:15px;line-height:22px;color:#FBFAF8">LLM judge verifies the output</span>
+          </li>
+          <li style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #34365A;padding-top:14px">
+            <span style="font:600 12px/16px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">04</span>
+            <span style="font-size:15px;line-height:22px;color:#FBFAF8">Posts evaluation and coaching tips to Slack</span>
+          </li>
+          <li style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #34365A;padding-top:14px">
+            <span style="font:600 12px/16px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">05</span>
+            <span style="font-size:15px;line-height:22px;color:#FBFAF8">Creates a deal action plan and syncs it to HubSpot</span>
+          </li>
+      </ol>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <button type="button" onClick="{{ openShot }}" aria-label="Expand screenshot" style="all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;height:340px;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #2C2E4D;transition:border-color 150ms ease" style-hover="border-color:#EE4E2E">
+            <img src="assets/agent-workflow.png" alt="Albato automation canvas for the Sales Call Evaluation Agent" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <span aria-hidden="true" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#16172B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(22,23,43,.25)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </button>
+          <figcaption style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:20px;color:#C9CAD6"><span style="font:600 12px/20px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">01</span>The automation</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <button type="button" onClick="{{ openShot }}" aria-label="Expand screenshot" style="all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;height:340px;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #2C2E4D;transition:border-color 150ms ease" style-hover="border-color:#EE4E2E">
+            <img src="assets/agent-prompt.png" alt="Gemini prompt defining the Sales Coach Pro scoring model" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <span aria-hidden="true" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#16172B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(22,23,43,.25)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </button>
+          <figcaption style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:20px;color:#C9CAD6"><span style="font:600 12px/20px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">02</span>The scoring prompt</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <button type="button" onClick="{{ openShot }}" aria-label="Expand screenshot" style="all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;height:340px;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #2C2E4D;transition:border-color 150ms ease" style-hover="border-color:#EE4E2E">
+            <img src="assets/agent-judge.png" alt="Judge-Validator prompt that reassesses the AE evaluation against lead quality" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <span aria-hidden="true" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#16172B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(22,23,43,.25)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </button>
+          <figcaption style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:20px;color:#C9CAD6"><span style="font:600 12px/20px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">03</span>Judge evaluator</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <button type="button" onClick="{{ openShot }}" aria-label="Expand screenshot" style="all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;height:340px;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #2C2E4D;transition:border-color 150ms ease" style-hover="border-color:#EE4E2E">
+            <img src="assets/agent-action-plan.png" alt="Action Plan Agent documentation: workflow, SQL qualification logic and input data" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <span aria-hidden="true" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#16172B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(22,23,43,.25)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </button>
+          <figcaption style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:20px;color:#C9CAD6"><span style="font:600 12px/20px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">04</span>Action plan agent vibe-coded in Claude Code</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <button type="button" onClick="{{ openShot }}" aria-label="Expand screenshot" style="all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;height:340px;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #2C2E4D;transition:border-color 150ms ease" style-hover="border-color:#EE4E2E">
+            <img src="assets/agent-slack.png" alt="Slack channel with the final score table and judge-validator assessment" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <span aria-hidden="true" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#16172B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(22,23,43,.25)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </button>
+          <figcaption style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:20px;color:#C9CAD6"><span style="font:600 12px/20px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">05</span>Score and judge review in Slack</figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+          <button type="button" onClick="{{ openShot }}" aria-label="Expand screenshot" style="all:unset;box-sizing:border-box;display:block;position:relative;cursor:zoom-in;height:340px;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #2C2E4D;transition:border-color 150ms ease" style-hover="border-color:#EE4E2E">
+            <img src="assets/agent-hubspot.png" alt="HubSpot note with the auto-generated deal navigation plan" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center">
+            <span aria-hidden="true" style="position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#16172B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(22,23,43,.25)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 2.5h4v4M6.5 13.5h-4v-4M13.5 2.5 9 7M2.5 13.5 7 9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </button>
+          <figcaption style="display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:20px;color:#C9CAD6"><span style="font:600 12px/20px Inter,sans-serif;color:#EE4E2E;font-variant-numeric:tabular-nums">06</span>Deal plan in HubSpot</figcaption>
+        </figure>
+      </div>
+    </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 Side quest -->
+<section data-chapter="3" data-screen-label="04 The side quest" style="background:#FDEDE8;padding:128px clamp(20px,5vw,64px)">
+  <div style="max-width:1120px;margin:0 auto">
+    <h2 style="margin:0;max-width:900px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.03em;color:#16172B;text-wrap:pretty">Oh, and by the way, I’ve always had a second job as a musician. It just never paid very well.</h2>
+    <button type="button" onClick="{{ toggleMusic }}" aria-expanded="{{ musicExpanded }}" style="all:unset;box-sizing:border-box;margin-top:32px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:10px 12px 10px 18px;border-radius:14px;background:#EE4E2E;color:#FFFFFF;font:600 15px/20px Inter,sans-serif;transition:background 150ms ease,transform 150ms ease" style-hover="background:#D63E20;color:#FFFFFF" style-active="transform:scale(.98)">
+      <span>{{ musicLabel }}</span>
+      <span aria-hidden="true" style="width:24px;height:24px;border-radius:50%;background:#FFFFFF;color:#EE4E2E;display:flex;align-items:center;justify-content:center">
+        <svg width="10" height="10" viewBox="0 0 14 14" fill="none" style="transform:rotate({{ musicRot }});transition:transform 280ms ease"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"></path></svg>
+      </span>
+    </button>
+    <div style="display:grid;grid-template-rows:{{ musicRows }};transition:grid-template-rows 520ms cubic-bezier(.2,.7,.2,1)">
+      <div style="overflow:hidden;min-height:0;visibility:{{ musicVis }}">
+        <div style="opacity:{{ musicOp }};transition:opacity 400ms ease 100ms">
+    <div style="margin-top:64px;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+      <div style="flex:1.4 1 380px;min-width:0;display:flex;flex-direction:column;gap:36px">
+        <p style="margin:0;max-width:560px;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">In 2011 I started a band playing Brazilian popular music: samba, forró, bossa nova, lambada, and more. Over the next ten years it grew into something remarkable.</p>
+        
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px">
+          
+          <span style="font-family: Newsreader, Georgia, serif; font-size: clamp(36px, 4.5vw, 56px); line-height: 1; letter-spacing: -0.03em; color: #EE4E2E">100+ live shows</span><span style="padding-bottom: 8px; display: flex; flex-direction: column; gap: 4px;">
+            
+            <span style="font-size: 15px; line-height: 22px; color: rgb(58, 59, 82);"><br></span>
+          </span><strong style="font-family: Newsreader, Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1; color: rgb(22, 23, 43);"><br></strong>
+        </div><p style="margin:0;max-width:560px;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">Somewhere along the way I also wrote and recorded original forró songs of my own. <a href="https://www.youtube.com/watch?v=d6j-rDSlDlM" target="_blank" rel="noopener" style="color:#EE4E2E;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px" style-hover="color:#C93A1E">Here's my favorite one.</a></p>
+        <div style="position:relative">
+          <img src="assets/band-forrosteiros.jpg" alt="The band on stage after a show" style="display:block;width:100%;height:auto;border-radius:24px">
+          <div aria-hidden="true" style="position:absolute;left:43%;top:5%;height:20%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none">
+            <span style="font:700 clamp(14px,2vw,22px)/1 Inter,sans-serif;letter-spacing:.08em;color:#FFFFFF;background:#EE4E2E;padding:5px 9px;border-radius:8px;transform:rotate(-4deg)">ME</span>
+            <svg viewBox="0 0 40 70" fill="none" preserveAspectRatio="xMidYMid meet" style="flex:1 1 0;min-height:0;width:auto;overflow:visible"><path d="M18 4c8 14 -6 26 2 40c3 6 3 12 1 20" stroke="#EE4E2E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 56l9 10l8-11" stroke="#EE4E2E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+      </div>
+      <aside style="flex:1 1 300px;min-width:0;max-width:400px;background:#FFFFFF;border-radius:24px;padding:32px;box-shadow:0 24px 40px rgba(22,23,43,.08)">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #E7E8EE;padding-bottom:16px">
+          <span style="font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7A7C8F">Honorary certificate</span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#EE4E2E"></span>
+        </div>
+        <p style="margin:20px 0 0;font-family:Newsreader,Georgia,serif;font-size:64px;line-height:1;letter-spacing:-.03em;color:#16172B">2019</p>
+        <p style="margin:16px 0 0;font-size:15px;line-height:23px;color:#3A3B52;text-wrap:pretty">The Ambassador of Brazil in Moscow awarded my band an honorary certificate for its contribution to Brazilian music and popular culture.</p>
+        <a href="assets/brazil-certificate.png" target="_blank" rel="noopener" style="display:block;margin-top:24px;border-radius:12px;overflow:hidden;border:1px solid #E7E8EE;transition:transform 200ms ease" style-hover="transform:scale(1.02)">
+          <img src="assets/brazil-certificate.png" alt="Honorary certificate from the Embassy of Brazil in Moscow to the Forrosteiros group" style="display:block;width:100%;height:auto">
+        </a>
+      </aside>
+    </div>
+
+    <div style="margin-top:96px;border-top:1px solid #F3C9BC;padding-top:40px;display:flex;flex-wrap:wrap;gap:32px 48px;align-items:center">
+      <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <p style="margin:0;flex:0 1 auto;font-family:Newsreader,Georgia,serif;font-size:clamp(36px,4.5vw,56px);line-height:1;letter-spacing:-.02em;color:#16172B">And I still play&nbsp;🎶</p><p style="margin:0;max-width:520px;font-size:17px;line-height:27px;color:#3A3B52;text-wrap:pretty">I still use every free moment to pick up my geeky Yamaha TransAcoustic and play a little. Some things never really go away :)</p>
+      </div>
+      <img src="assets/leo-guitar.png" alt="Leo playing his Yamaha TransAcoustic guitar at a dinner table" style="flex:0 1 380px;min-width:0;width:100%;max-width:380px;height:auto;display:block;border-radius:24px">
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Wall of love -->
+<section data-chapter="4" data-screen-label="05 The wall of love" style="padding:128px clamp(20px,5vw,64px);max-width:1120px;margin:0 auto">
+  <p style="margin:0;font:600 12px/16px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3A3B52;display:flex;align-items:center;gap:10px"><span style="width:20px;height:2px;background:#EE4E2E"></span>The wall of love</p>
+  <h2 style="margin:20px 0 0;max-width:900px;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(36px,5.2vw,64px);line-height:1.04;letter-spacing:-.025em;color:#16172B;text-wrap:pretty">Here's what others say about me<span style="color: rgb(238, 78, 46);"></span></h2>
+  
+
+  <div style="margin-top:56px;display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+    <sc-for list="{{ testimonialCols }}" as="col" hint-placeholder-count="3">
+    <div style="flex-grow:1;flex-shrink:1;flex-basis:calc((680px - 100%) * 999);min-width:0;display:flex;flex-direction:column;gap:20px">
+    <sc-for list="{{ col }}" as="t" hint-placeholder-count="2">
+      <figure style="margin:0;background:#FFFFFF;border:1px solid #E7E8EE;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:24px">
+        <blockquote style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ t.paras }}" as="q" hint-placeholder-count="1">
+            <p style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.38;letter-spacing:-.005em;color:#16172B;text-wrap:pretty">{{ q }}</p>
+          </sc-for>
+        </blockquote>
+        <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #E7E8EE;padding-top:20px">
+          <img src="{{ t.photo }}" alt="{{ t.name }}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 auto;display:block">
+          <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+            <strong style="font-size:15px;line-height:20px;font-weight:600;color:#16172B">{{ t.name }}</strong>
+            <span style="font-size:13px;line-height:18px;color:#7A7C8F">{{ t.role }}</span>
+          </span>
+        </figcaption>
+        <a href="{{ t.href }}" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:500 15px/20px Inter,sans-serif;color:#EE4E2E" style-hover="color:#C93A1E">Read full testimonial<svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M7.5 6H14v6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </figure>
+    </sc-for>
+    </div>
+    </sc-for>
+  </div>
+  <p style="margin:56px 0 0;font-family:Newsreader,Georgia,serif;font-size:clamp(24px,2.6vw,30px);line-height:1.25;color:#16172B;text-align:center;text-wrap:pretty">Looks like I'm not completely unbearable to work with&nbsp;🥹</p>
+</section>
+
+<!-- 06 What's next -->
+<section data-chapter="5" data-screen-label="06 What's next" style="background:#16172B;color:#FBFAF8;padding:140px clamp(20px,5vw,64px) 72px">
+  <div style="max-width:1120px;margin:0 auto">
+    <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(56px,10vw,136px);line-height:.92;letter-spacing:-.04em;color:#FBFAF8">So, what's <span style="color:#EE4E2E">next?</span></h2>
+    <p style="margin:36px 0 0;max-width:640px;font-family:Newsreader,Georgia,serif;font-size:clamp(22px,2.6vw,30px);line-height:1.3;color:#E3E4EC;text-wrap:pretty">I'm looking for the next opportunity worth getting obsessed with, with a team that actually wants to build something meaningful.</p>
+    <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:10px">
+      <span style="padding:10px 18px;border-radius:9999px;border:1px solid #3A3D63;font-size:15px;line-height:20px;color:#FBFAF8">GTM</span>
+      <span style="padding:10px 18px;border-radius:9999px;border:1px solid #3A3D63;font-size:15px;line-height:20px;color:#FBFAF8">Operations</span>
+      <span style="padding:10px 18px;border-radius:9999px;border:1px solid #3A3D63;font-size:15px;line-height:20px;color:#FBFAF8">Product</span>
+      <span style="padding:10px 18px;border-radius:9999px;border:1px solid #3A3D63;font-size:15px;line-height:20px;color:#FBFAF8">People</span>
+      <span style="padding:10px 18px;border-radius:9999px;border:1px solid #3A3D63;font-size:15px;line-height:20px;color:#FBFAF8">+ AI</span>
+    </div>
+    <div style="margin-top:64px;display:flex;flex-wrap:wrap;gap:12px">
+      <a href="mailto:crowhunter@gmail.com" style="display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:16px;background:#EE4E2E;color:#FFFFFF;font:600 17px/20px Inter,sans-serif;transition:background 150ms ease" style-hover="background:#D63E20;color:#FFFFFF">Let's talk →</a>
+      <a href="https://www.linkedin.com/in/leo-goldfarb-7b743449/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:16px;border:1px solid #3A3D63;color:#FBFAF8;font:500 17px/20px Inter,sans-serif;transition:background 150ms ease" style-hover="background:#20223C;color:#FBFAF8">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.5"></rect><path d="M8 10.5V16M8 7.8v.2M11.5 16v-3.2c0-1.4 1-2.3 2.2-2.3s2.3.9 2.3 2.3V16M11.5 10.5V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        LinkedIn
+      </a>
+    </div>
+    <dl style="margin:56px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px 32px">
+      <div style="border-top:1px solid #2C2E4D;padding-top:16px;display:flex;flex-direction:column;gap:8px">
+        <dt style="font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#A3A5B8">Based in</dt>
+        <dd style="margin:0;font-size:17px;line-height:24px;color:#FBFAF8">Cascais, Portugal</dd>
+      </div>
+      <div style="border-top:1px solid #2C2E4D;padding-top:16px;display:flex;flex-direction:column;gap:8px">
+        <dt style="font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#A3A5B8">Phone</dt>
+        <dd style="margin:0;font-size:17px;line-height:24px"><a href="tel:+351915218416" style="color:#FBFAF8;font-variant-numeric:tabular-nums" style-hover="color:#EE4E2E">+351 915 218 416</a></dd>
+      </div>
+      <div style="border-top:1px solid #2C2E4D;padding-top:16px;display:flex;flex-direction:column;gap:8px">
+        <dt style="font:600 11px/16px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#A3A5B8">Email</dt>
+        <dd style="margin:0;font-size:17px;line-height:24px"><a href="mailto:crowhunter@gmail.com" style="color:#FBFAF8" style-hover="color:#EE4E2E">crowhunter@gmail.com</a></dd>
+      </div>
+    </dl>
+    <div style="margin-top:96px;border-top:1px solid #2C2E4D;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;line-height:16px;color:#A3A5B8">
+      <span>Leo Goldfarb</span>
+      <span>06 / 06</span>
+    </div>
+  </div>
+</section>
+
+</main>
+<sc-if value="{{ hasShot }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-label="Screenshot" onClick="{{ closeShot }}" style="position:fixed;inset:0;z-index:100;background:rgba(22,23,43,.92);overflow:auto;padding:64px clamp(16px,4vw,48px) 48px;box-sizing:border-box;cursor:zoom-out">
+    <button type="button" onClick="{{ closeShot }}" aria-label="Close" style="all:unset;position:fixed;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:#FBFAF8;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:101" style-hover="background:#FDEDE8">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13" stroke="#16172B" stroke-width="1.75" stroke-linecap="round"></path></svg>
+    </button>
+    <div style="max-width:1400px;margin:0 auto">{{ shotImg }}</div>
+  </div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;openMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;single&quot;,&quot;multi&quot;],&quot;default&quot;:&quot;single&quot;,&quot;tsType&quot;:&quot;'single'|'multi'&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;showMarker&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { chapter: 0, progress: 0, open: {}, about: false, music: false, shot: null, shotAlt: "" };
+
+  componentDidMount() {
+    this.onKey = e => { if (e.key === 'Escape' && this.state.shot) this.setState({ shot: null }); };
+    addEventListener('keydown', this.onKey);
+    this.reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onScroll = () => {
+      const el = document.documentElement;
+      const max = el.scrollHeight - innerHeight;
+      const progress = max > 0 ? Math.min(1, scrollY / max) : 0;
+      let chapter = 0;
+      document.querySelectorAll('[data-chapter]').forEach(s => {
+        if (s.getBoundingClientRect().top < innerHeight * 0.45) chapter = +s.dataset.chapter;
+      });
+      if (progress !== this.state.progress || chapter !== this.state.chapter) this.setState({ progress, chapter });
+    };
+    addEventListener('scroll', this.onScroll, { passive: true });
+    addEventListener('resize', this.onScroll);
+    this.onScroll();
+  }
+  toggle(i) {
+    const multi = (this.props.openMode ?? 'single') === 'multi';
+    this.setState(s => {
+      const isOpen = !!s.open[i];
+      return { open: multi ? { ...s.open, [i]: !isOpen } : (isOpen ? {} : { [i]: true }) };
+    });
+  }
+  componentWillUnmount() {
+    removeEventListener('keydown', this.onKey);
+    removeEventListener('scroll', this.onScroll);
+    removeEventListener('resize', this.onScroll);
+  }
+
+  renderVals() {
+    const names = ['Hero', 'My story', 'Then AI happened', 'The side quest', 'The wall of love', "What's next"];
+    const seg = str => {
+      const out = [];
+      str.split(/(\[[^\]]+\]\([^)]+\))/).forEach(part => {
+        const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (m) out.push({ t: m[1], href: m[2], isLink: true, isText: false });
+        else part.split('**').forEach((t, i) => { if (t) out.push({ t, w: i % 2 ? 600 : 400, c: i % 2 ? '#16172B' : 'inherit', isLink: false, isText: true }); });
+      });
+      return out;
+    };
+
+    const tl = [
+      { year: '2008', org: 'IBM', tags: ["IT","Enterprise"], role: 'Pre-Sales Specialist / Global Sales School',
+        did: ["Started my career in IBM’s Software Group, supporting pre-sales activities across Eastern Europe & Africa. I worked on proposals, presentations, client communication, and sales support, and completed IBM’s Global Sales School with distinction."],
+        learned: ["My first real exposure to enterprise sales taught me how much preparation, structure, and communication matter when you're selling something complex. It also gave me an early taste of working in a large, international organization."],
+        ach: [] },
+      { year: '2009', org: 'Hewlett-Packard', tags: ["IT","Enterprise"], role: 'Business Consultant',
+        did: ['Worked alongside HP’s sales team on Managed Print Services, helping reps win enterprise deals by building bespoke pricing models, preparing contracts, and supporting key account expansion.', 'Along the way, I crafted **30+ pricing models**, helped expand **20+ client accounts**, and supported major enterprise customers including SAP, KPMG, Philips, and Metro.'],
+        learned: ['How to turn a complex enterprise product into a commercially viable solution, balancing customer needs, pricing models, contracts, and company profit margins. This was also where I learned to work across multiple functions and bridge the gap between sales, product, finance, and operations.'],
+        ach: [] },
+      { year: '2010–2015', org: 'Yandex', tags: ["Tech","Large Org"], role: 'Key Account Manager → Industry Head, Finance & Insurance',
+        did: ['Started as a Key Account Manager working with some of the CIS’s largest advertisers, including IKEA, Citibank, and Groupon, helping clients grow their businesses through Yandex paid search and display advertising - and, naturally, their Yandex ad spend along the way.', 'I later became Industry Head for Finance & Insurance, leading a team of Key Account Managers responsible for major financial advertisers. I built sales strategies, set KPIs, managed agency and advertiser relationships, and worked with clients on broader digital growth strategies.'],
+        learned: ['How to move from **selling to advising, and from doing to leading**.', "Early on, I learned that great account management isn't really about managing accounts. It's about understanding the client's business well enough to find growth opportunities they haven't seen themselves.", 'As I moved into leadership, I learned how to achieve results by building and empowering a strong team rather than doing everything myself. I also discovered the power of deep industry expertise: once you understand a market well, you can become a genuine strategic partner rather than just another vendor.'],
+        ach: [] },
+      { year: '2015–2016', org: 'Booking.com', tags: ["Tech","Large Org"], role: 'Webmarketing Expert',
+        did: ['Managed large-scale Google and Yandex advertising projects, analyzed growth and profitability opportunities, presented results to senior leadership, and worked with product and engineering teams on PPC platforms and APIs.'],
+        learned: ['What a genuinely data-driven organization looks like at scale. I learned to connect marketing performance with actual business outcomes (bookings, revenue, ROI, and profitability) rather than optimizing marketing metrics in isolation.'],
+        ach: ['Grew Google bookings by **60% YoY**', 'Grew Yandex bookings by **90% YoY**', 'Launched and scaled **8 highly profitable ad accounts**', 'Managed accounts generating around **15K bookings/month**', 'Worked with engineering on **30+ product features** and 40+ critical issues'] },
+      { year: '2016–2022', org: 'iProspect / Dentsu', tags: ["Agency","Large Org"], role: 'COO',
+        did: ['Ran company-wide operations across Finance, IT, Client Service, Product, and other functions for a 500+ person organization. Owned P&Ls, financial planning, performance metrics, leadership goals, recruitment, outsourcing, and operational processes.', 'My client portfolio included a pretty impressive lineup of global brands such as Microsoft, Intel, Mastercard, Danone, BMW, Nestlé, IKEA, Philips, L’Oréal, Toyota/Lexus, Huawei, Burger King, and many others.'],
+        learned: ["How a large-scale business actually works behind the scenes, and how interconnected everything is. Revenue, clients, operations, finance, technology, and people may look like separate things, but they’re all pieces of the same puzzle (and the same P&L). At Dentsu, I learned to look at the business holistically and understand how each piece affects the others and how to optimize the whole system, not just individual parts.", 'This was also where I really became an operational guru: taking messy, cumbersome workflows and turning them into well-oiled systems.'],
+        ach: ['Helped scale the agency from **$68M to $270M** in annual revenue', 'Exceeded company revenue & EBITDA targets **4 years in a row**', 'Improved financial planning & budgeting accuracy by **30%**', "Reduced clients' overdue payments by **60% YoY**", 'Increased operating margin by **9 percentage points YoY**', 'Reduced staff churn by **3x YoY**'] },
+      { year: '2022–Present', org: 'Albato', tags: ["Tech","Startup"], role: 'Co-founder, Head of GTM & Business Operations',
+        did: ['Led the market entry and 0 > 1 growth for Albato Global in North America and Europe.', 'Architected and built the full go-to-market engine, sales, and customer success functions from scratch for [Albato Embedded](https://albato.com/embedded), a complex B2B SaaS / white-label iPaaS product.', "Defined the ICP and target markets, designed the pricing & commercial models, hired, trained and managed customer-facing teams, and organized the entire operational backbone that enabled the company's growth.", 'I also stayed deeply hands-on with sales - personally sourcing, managing, and closing dozens of deals with B2B SaaS companies across global markets, from first touch to signed contract.'],
+        learned: ['How to build something when there is no playbook.', 'You have to get your hands dirty and be willing to do whatever the business needs: shaping strategy, selling on a call, firefighting a customer issue, or vibing at 2am, or sometimes all at once.', ''],
+        ach: ['Built **$2M ARR** from scratch', 'Closed **50+** B2B SaaS customers', '**Top 5** Integration Software on G2', "Automated **100+** of the team's repetitive workflows", 'Built and deployed **15+ AI agents**', 'Turned a local team into a **leading global SaaS player**'] }
+    ];
+    const tagPal = { IT: ['#E8EEFF', '#2A4FC4'], Tech: ['#E6F6F3', '#14705F'], Agency: ['#F3E9FF', '#6B35B8'], Enterprise: ['#EEF0F4', '#3A3B52'], 'Large Org': ['#FFF4D6', '#8A5A00'], Startup: ['#FDEDE8', '#C03A1C'] };
+    const timeline = tl.map((it, i) => {
+      const open = !!this.state.open[i];
+      return { ...it, tagList: (it.tags || []).map(t => ({ t, bg: (tagPal[t] || tagPal.Enterprise)[0], fg: (tagPal[t] || tagPal.Enterprise)[1] })), idx: String(i), num: String(i + 1).padStart(2, '0'),
+        did: it.did.map(seg), learned: it.learned.map(seg), ach: it.ach.map(seg),
+        hasLearned: it.learned.length > 0, hasAch: it.ach.length > 0,
+        op: open ? 1 : 0, tf: open ? 'none' : 'translateY(14px)',
+        ariaExpanded: open ? 'true' : 'false', rows: open ? '1fr' : '0fr', vis: open ? 'visible' : 'hidden',
+        rot: open ? '45deg' : '0deg', chevBg: open ? '#EE4E2E' : '#5B5E85', chevStroke: '#FFFFFF',
+        toggle: () => this.toggle(i) };
+    });
+
+    const agentData = [
+      ['SP', 'Sales Performance Agent', 'Evaluates AEs against a scoring model and hands back coaching tips.', 'Sales'],
+      ['NPS', 'NPS Agent', 'Runs NPS surveys autonomously, start to finish.', 'Customer Success'],
+      ['LS', 'Lead Scoring Agent', 'Scores and qualifies inbound leads as they arrive.', 'Pipeline'],
+      ['BDR', 'AI BDR', 'Vibe-coded with Claude Code. Runs lead conversations and books meetings on its own.', 'Sales'],
+      ['CRM', 'CRM Agent', 'Keeps pipeline tasks moving and the data clean.', 'Pipeline'],
+      ['FU', 'Follow-up Agent', 'Handles the repetitive follow-up work that never ends.', 'Pipeline']
+    ];
+    const agents = agentData.map(([mono, name, line, tag]) => {
+      const f = false;
+      return { mono, name, line, tag,
+        bg: f ? '#EE4E2E' : '#20223C', border: f ? '#EE4E2E' : '#2C2E4D',
+        tileBg: f ? '#16172B' : '#FBFAF8', tileFg: f ? '#FBFAF8' : '#16172B',
+        tagBorder: '#9B6FE0', tagFg: '#C4A6F5', tagBg: 'transparent', lineFg: f ? '#FFFFFF' : '#C9CAD6' };
+    });
+
+    const principles = ['Start with the problem', 'Make it measurable', 'Build the system, not the workaround', 'Automate the boring stuff', 'Give people ownership', 'Get close to the problem']
+      .map((t, i) => ({ n: '0' + (i + 1), t }));
+
+    const testimonials = [
+      { name: 'Justin Wells', role: 'Head of Tech Ventures at Rex', photo: 'assets/justin-wells.jpeg',
+        quote: ["Throughout the initial engagement, Leo showed immense excitement, encouragement, and mutual energy toward the project. Even when a project hits bumps and scope changes, a good partnership can keep pivoting and innovating. This is what we got from Leo & Albato, 100% of the time.", "I strongly recommend Leo for his leadership, camaraderie, and general curiosity."],
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Wenddy Dias', role: 'Content & SEO Specialist at Wati', photo: 'assets/wenddy-dias.png',
+        quote: 'Leo is a highly strategic professional. He is someone who makes others feel heard, respected, and comfortable sharing their ideas.',
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Bethany Stachenfeld', role: 'Head of Growth at Schematic; EIR at Active Capital', photo: 'assets/bethany-stachenfeld.jpeg',
+        quote: 'Leo was fabulous to work with. He was always proactive and responsive, and truly an expert helping us set everything up.',
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Guilherme Toledo', role: 'Founder at Strataflow', photo: 'assets/guilherme-toledo.png',
+        quote: ["One of Leo's most remarkable traits is his ability to connect with people. He is an inspiring and motivating leader, capable of engaging teams and aligning all members towards common goals. His clear and effective communication skills make him an excellent negotiator and facilitator of complex agreements.",
+          "Leo played a pivotal role in expanding Albato's business, securing new markets and strategic partnerships around the world. His determination and perseverance in facing challenges were a true example to all of us."],
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Ovidiu Rosu', role: 'Director of Software Engineering at ServiceNow', photo: 'assets/ovidiu-rosu.png',
+        quote: 'Leo showed true professionalism in our collaboration, always coming with new ideas to improve the tools, and willing to help when needed. We both worked at Booking.com, our paths crossed a lot of times, and I can say that Leo is a talented, hard-working and easy to talk to co-worker.',
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Soumitra Yadav', role: 'Automation & AI Solutions Developer', photo: 'assets/soumitra-yadav.png',
+        quote: "Leo's ability to structure complex initiatives into actionable steps kept the team aligned and moving forward effectively.",
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Gabriela Geanta', role: 'Senior Outbound Growth Specialist at GetResponse', photo: 'assets/gabriela-geanta.png',
+        quote: "Working under Leo's leadership not only improved my performance but also strengthened my confidence and decision making skills.",
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Leticia Mett', role: 'CS Coordinator at BotCity', photo: 'assets/leticia-mett.png',
+        quote: ["Beyond being an incredible leader, Leo has sharp business acumen and a deep understanding of the SaaS market. His ability to build strong client relationships, grasp complex needs, and turn them into actionable strategies was essential for Albato’s growth in Latin America.",
+          "I learned a lot from him about leadership, client relationships, and how to balance empathy with results in everyday work"],
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Jacobo Alonso', role: 'Head of Growth & Performance at eBooking.com', photo: 'assets/jacobo-alonso.png',
+        quote: 'I worked with Leo for almost a year at Booking.com and he impressed me with his high project management skills as he always had a plan to be executed focusing on what was more important. Moreover, Leo has a great personality and is easy to work with, personally, I enjoyed working with him and growing the business together.',
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' }
+    ].map(t => ({ ...t, paras: Array.isArray(t.quote) ? t.quote : [t.quote] }));
+    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 1, 'Gabriela Geanta': 1, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 2 };
+    const testimonialCols = [[], [], []];
+    testimonials.forEach((t, i) => testimonialCols[colOf[t.name] ?? i % 3].push(t));
+
+    return {
+      progressPct: (this.state.progress * 100).toFixed(2) + '%',
+      showMarker: this.props.showMarker ?? true,
+      markerNum: '0' + (this.state.chapter + 1),
+      markerName: names[this.state.chapter],
+      aboutExpanded: this.state.about ? 'true' : 'false', aboutLabel: this.state.about ? 'Show less' : 'Read more',
+      aboutRot: this.state.about ? '45deg' : '0deg', aboutRows: this.state.about ? '1fr' : '0fr',
+      aboutVis: this.state.about ? 'visible' : 'hidden', aboutOp: this.state.about ? 1 : 0,
+      toggleAbout: () => this.setState(s => ({ about: !s.about })),
+      musicExpanded: this.state.music ? 'true' : 'false', musicLabel: this.state.music ? 'Show less' : 'Read the story',
+      musicRot: this.state.music ? '45deg' : '0deg', musicRows: this.state.music ? '1fr' : '0fr',
+      musicVis: this.state.music ? 'visible' : 'hidden', musicOp: this.state.music ? 1 : 0,
+      toggleMusic: () => this.setState(s => ({ music: !s.music })),
+      agentsExpanded: this.state.agentsOpen ? 'true' : 'false', agentsLabel: this.state.agentsOpen ? 'Show less' : 'Read the story',
+      agentsRot: this.state.agentsOpen ? '45deg' : '0deg', agentsRows: this.state.agentsOpen ? '1fr' : '0fr',
+      agentsVis: this.state.agentsOpen ? 'visible' : 'hidden', agentsOp: this.state.agentsOpen ? 1 : 0,
+      toggleAgents: () => this.setState(s => ({ agentsOpen: !s.agentsOpen })),
+      hasShot: !!this.state.shot,
+      openShot: e => { const img = e.currentTarget.querySelector('img'); if (img) this.setState({ shot: img.currentSrc || img.src, shotAlt: img.alt }); },
+      closeShot: e => { e.stopPropagation(); this.setState({ shot: null }); },
+      shotImg: this.state.shot ? React.createElement('img', { src: this.state.shot, alt: this.state.shotAlt, onClick: e => e.stopPropagation(), style: { display: 'block', width: '100%', height: 'auto', borderRadius: 16, background: '#FFFFFF', cursor: 'default' } }) : null,
+      timeline, agents, principles, testimonials, testimonialCols
+    };
+  }
+}
+</script>
+</body>
+</html>
