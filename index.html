@@ -528,6 +528,9 @@ class Component extends DCLogic {
       { name: 'Justin Wells', role: 'Head of Tech Ventures at Rex', photo: 'justin-wells.jpeg',
         quote: ["Throughout the initial engagement, Leo showed immense excitement, encouragement, and mutual energy toward the project. Even when a project hits bumps and scope changes, a good partnership can keep pivoting and innovating. This is what we got from Leo & Albato, 100% of the time.", "I strongly recommend Leo for his leadership, camaraderie, and general curiosity."],
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'John Bromley', role: 'Co-founder at Sendr', photo: 'john-bromley.jpeg',
+        quote: "Leo is kind, calm, gentle founder that makes collaboration easy. On every call we've had he's shown up engaged and supportive. He and the Albato team have gone out of their way to stay flexible as we've shaped things around our needs and our users' needs.",
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Wenddy Dias', role: 'Content & SEO Specialist at Wati', photo: 'wenddy-dias.png',
         quote: 'Leo is a highly strategic professional. He is someone who makes others feel heard, respected, and comfortable sharing their ideas.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
@@ -539,7 +542,7 @@ class Component extends DCLogic {
           "Leo played a pivotal role in expanding Albato's business, securing new markets and strategic partnerships around the world. His determination and perseverance in facing challenges were a true example to all of us."],
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Ovidiu Rosu', role: 'Director of Software Engineering at ServiceNow', photo: 'ovidiu-rosu.png',
-        quote: 'Leo showed true professionalism in our collaboration, always coming with new ideas to improve the tools, and willing to help when needed. We both worked at Booking.com, our paths crossed a lot of times, and I can say that Leo is a talented, hard-working and easy to talk to co-worker.',
+        quote: 'We both worked at Booking.com, our paths crossed a lot of times, and I can say that Leo is a talented, hard-working and easy to talk to co-worker. Leo showed true professionalism in our collaboration, always coming with new ideas to improve the tools, and willing to help when needed.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Soumitra Yadav', role: 'Automation & AI Solutions Developer', photo: 'soumitra-yadav.png',
         quote: "Leo's ability to structure complex initiatives into actionable steps kept the team aligned and moving forward effectively.",
@@ -555,7 +558,7 @@ class Component extends DCLogic {
         quote: 'I worked with Leo for almost a year at Booking.com and he impressed me with his high project management skills as he always had a plan to be executed focusing on what was more important. Moreover, Leo has a great personality and is easy to work with, personally, I enjoyed working with him and growing the business together.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' }
     ].map(t => ({ ...t, paras: Array.isArray(t.quote) ? t.quote : [t.quote] }));
-    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 1, 'Gabriela Geanta': 1, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 2 };
+    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 1, 'Gabriela Geanta': 1, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 2, 'John Bromley': 0 };
     const testimonialCols = [[], [], []];
     testimonials.forEach((t, i) => testimonialCols[colOf[t.name] ?? i % 3].push(t));
 
