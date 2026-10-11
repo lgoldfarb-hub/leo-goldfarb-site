@@ -572,6 +572,9 @@ class Component extends DCLogic {
       { name: 'John Bromley', role: 'Co-founder at Sendr', photo: 'john-bromley.jpeg',
         quote: "Leo is kind, calm, gentle founder that makes collaboration easy. On every call we've had he's shown up engaged and supportive. He and the Albato team have gone out of their way to stay flexible as we've shaped things around our needs and our users' needs.",
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Tanya Deshkevich', role: 'Strategic BDR, Stealth startup', photo: 'tanya-deshkevich.png',
+        quote: ["Thanks to Leo, my day-to-day sales workflow has become as smooth as it possibly could be. All the manual work I used to dread, he automated, freeing me up to focus on strategy and new approaches instead.", "Beyond his technical skills, he's respectful, never micromanages and he genuinely listens to people's ideas and helps bring them to life.", "Thanks to him, Albato has felt like a second home to me - a place with real work-life balance, where my ideas were heard and acted on :)"],
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Wenddy Dias', role: 'Content & SEO Specialist at Wati', photo: 'wenddy-dias.png',
         quote: 'Leo is a highly strategic professional. He is someone who makes others feel heard, respected, and comfortable sharing their ideas.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
@@ -599,14 +602,14 @@ class Component extends DCLogic {
         quote: 'I worked with Leo for almost a year at Booking.com and he impressed me with his high project management skills as he always had a plan to be executed focusing on what was more important. Moreover, Leo has a great personality and is easy to work with, personally, I enjoyed working with him and growing the business together.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' }
     ].map(t => ({ ...t, paras: Array.isArray(t.quote) ? t.quote : [t.quote] }));
-    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 1, 'Gabriela Geanta': 1, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 2, 'John Bromley': 0 };
+    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 1, 'Gabriela Geanta': 1, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 2, 'John Bromley': 0, 'Tanya Deshkevich': 1 };
     const tagStyles = {
       'My Client': ['#E5EEFF', '#2F64E0'],
       'My Direct Report': ['#E3F5E8', '#207936'],
       'My Manager': ['#EEE6FF', '#6B3FC9'],
       'My Teammate': ['#EFEFF1', '#16172B']
     };
-    const tagOf = { 'Justin Wells': 'My Client', 'Bethany Stachenfeld': 'My Client', 'John Bromley': 'My Client', 'Leticia Mett': 'My Direct Report', 'Gabriela Geanta': 'My Direct Report', 'Jacobo Alonso': 'My Manager', 'Wenddy Dias': 'My Teammate', 'Soumitra Yadav': 'My Teammate', 'Ovidiu Rosu': 'My Teammate', 'Guilherme Toledo': 'My Teammate' };
+    const tagOf = { 'Justin Wells': 'My Client', 'Bethany Stachenfeld': 'My Client', 'John Bromley': 'My Client', 'Leticia Mett': 'My Direct Report', 'Gabriela Geanta': 'My Direct Report', 'Tanya Deshkevich': 'My Direct Report', 'Jacobo Alonso': 'My Manager', 'Wenddy Dias': 'My Teammate', 'Soumitra Yadav': 'My Teammate', 'Ovidiu Rosu': 'My Teammate', 'Guilherme Toledo': 'My Teammate' };
     testimonials.forEach(t => { const tg = tagOf[t.name]; if (tg) { t.tag = tg; t.tagBg = tagStyles[tg][0]; t.tagFg = tagStyles[tg][1]; } else { t.tag = ''; } });
     const tf = this.state.tagFilter;
     const shown = tf === 'All' ? testimonials : testimonials.filter(t => t.tag === tf);
