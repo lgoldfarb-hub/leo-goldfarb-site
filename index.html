@@ -581,15 +581,18 @@ class Component extends DCLogic {
       { name: 'Bethany Stachenfeld', role: 'Head of Growth at Schematic; EIR at Active Capital', photo: 'bethany-stachenfeld.jpeg',
         quote: 'Leo was fabulous to work with. He was always proactive and responsive, and truly an expert helping us set everything up.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
+      { name: 'Ben Mort', role: 'Product Manager at Alertacall Ltd', photo: 'ben-mort.jpeg',
+        quote: "During my time as Head of Product at Vivantio, I brought in Albato as our integration platform, and working with Leo Goldfarb was a great experience. Leo was exceptionally personable, approachable, and truly committed to our outcomes. It always felt like he and his team were going the extra mile to ensure our success. His hands-on support, expertise, and collaborative spirit made both the procurement and rollout seamless. Thanks Leo!",
+        href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Wenddy Dias', role: 'Content & SEO Specialist at Wati', photo: 'wenddy-dias.png',
         quote: 'Leo is a highly strategic professional. He is someone who makes others feel heard, respected, and comfortable sharing their ideas.',
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Tanya Deshkevich', role: 'Strategic BDR, Stealth startup', photo: 'tanya-deshkevich.png',
         quote: ["Thanks to Leo, my day-to-day sales workflow has become as smooth as it possibly could be. All the manual work I used to dread, he automated, freeing me up to focus on strategy and new approaches instead.", "Beyond his technical skills, he's respectful, never micromanages and he genuinely listens to people's ideas and helps bring them to life.", "Thanks to him, Albato has felt like a second home to me - a place with real work-life balance, where my ideas were heard and acted on :)"],
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
-      { name: 'Guilherme Toledo', role: 'Founder at Strataflow', photo: 'guilherme-toledo.png',
-        quote: ["One of Leo's most remarkable traits is his ability to connect with people. He is an inspiring and motivating leader, capable of engaging teams and aligning all members towards common goals. His clear and effective communication skills make him an excellent negotiator and facilitator of complex agreements.",
-          "Leo played a pivotal role in expanding Albato's business, securing new markets and strategic partnerships around the world. His determination and perseverance in facing challenges were a true example to all of us."],
+      { name: 'Leticia Mett', role: 'CS Coordinator at BotCity', photo: 'leticia-mett.png',
+        quote: ["Beyond being an incredible leader, Leo has sharp business acumen and a deep understanding of the SaaS market. His ability to build strong client relationships, grasp complex needs, and turn them into actionable strategies was essential for Albato’s growth in Latin America.",
+          "I learned a lot from him about leadership, client relationships, and how to balance empathy with results in everyday work"],
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Ovidiu Rosu', role: 'Director of Software Engineering at ServiceNow', photo: 'ovidiu-rosu.png',
         quote: 'We both worked at Booking.com, our paths crossed a lot of times, and I can say that Leo is a talented, hard-working and easy to talk to co-worker. Leo showed true professionalism in our collaboration, always coming with new ideas to improve the tools, and willing to help when needed.',
@@ -597,9 +600,9 @@ class Component extends DCLogic {
       { name: 'Soumitra Yadav', role: 'Automation & AI Solutions Developer', photo: 'soumitra-yadav.png',
         quote: "Leo's ability to structure complex initiatives into actionable steps kept the team aligned and moving forward effectively.",
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
-      { name: 'Leticia Mett', role: 'CS Coordinator at BotCity', photo: 'leticia-mett.png',
-        quote: ["Beyond being an incredible leader, Leo has sharp business acumen and a deep understanding of the SaaS market. His ability to build strong client relationships, grasp complex needs, and turn them into actionable strategies was essential for Albato’s growth in Latin America.",
-          "I learned a lot from him about leadership, client relationships, and how to balance empathy with results in everyday work"],
+      { name: 'Guilherme Toledo', role: 'Founder at Strataflow', photo: 'guilherme-toledo.png',
+        quote: ["One of Leo's most remarkable traits is his ability to connect with people. He is an inspiring and motivating leader, capable of engaging teams and aligning all members towards common goals. His clear and effective communication skills make him an excellent negotiator and facilitator of complex agreements.",
+          "Leo played a pivotal role in expanding Albato's business, securing new markets and strategic partnerships around the world. His determination and perseverance in facing challenges were a true example to all of us."],
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' },
       { name: 'Jacobo Alonso', role: 'Head of Growth & Performance at eBooking.com', photo: 'jacobo-alonso.png',
         quote: 'I worked with Leo for almost a year at Booking.com and he impressed me with his high project management skills as he always had a plan to be executed focusing on what was more important. Moreover, Leo has a great personality and is easy to work with, personally, I enjoyed working with him and growing the business together.',
@@ -608,14 +611,14 @@ class Component extends DCLogic {
         quote: "Working under Leo's leadership not only improved my performance but also strengthened my confidence and decision making skills.",
         href: 'https://www.linkedin.com/in/leo-goldfarb-7b743449/details/recommendations/?detailScreenTabIndex=0' }
     ].map(t => ({ ...t, paras: Array.isArray(t.quote) ? t.quote : [t.quote] }));
-    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 1, 'Gabriela Geanta': 2, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 2, 'John Bromley': 0, 'Tanya Deshkevich': 1 };
+    const colOf = { 'Wenddy Dias': 0, 'Soumitra Yadav': 0, 'Ovidiu Rosu': 2, 'Bethany Stachenfeld': 1, 'Guilherme Toledo': 2, 'Gabriela Geanta': 2, 'Justin Wells': 0, 'Jacobo Alonso': 2, 'Leticia Mett': 1, 'John Bromley': 0, 'Tanya Deshkevich': 1, 'Ben Mort': 1 };
     const tagStyles = {
       'My Client': ['#E5EEFF', '#2F64E0'],
       'My Direct Report': ['#E3F5E8', '#207936'],
       'My Manager': ['#EEE6FF', '#6B3FC9'],
       'My Teammate': ['#EFEFF1', '#16172B']
     };
-    const tagOf = { 'Justin Wells': 'My Client', 'Bethany Stachenfeld': 'My Client', 'John Bromley': 'My Client', 'Leticia Mett': 'My Direct Report', 'Gabriela Geanta': 'My Direct Report', 'Tanya Deshkevich': 'My Direct Report', 'Jacobo Alonso': 'My Manager', 'Wenddy Dias': 'My Teammate', 'Soumitra Yadav': 'My Teammate', 'Ovidiu Rosu': 'My Teammate', 'Guilherme Toledo': 'My Teammate' };
+    const tagOf = { 'Justin Wells': 'My Client', 'Bethany Stachenfeld': 'My Client', 'John Bromley': 'My Client', 'Ben Mort': 'My Client', 'Leticia Mett': 'My Direct Report', 'Gabriela Geanta': 'My Direct Report', 'Tanya Deshkevich': 'My Direct Report', 'Jacobo Alonso': 'My Manager', 'Wenddy Dias': 'My Teammate', 'Soumitra Yadav': 'My Teammate', 'Ovidiu Rosu': 'My Teammate', 'Guilherme Toledo': 'My Teammate' };
     testimonials.forEach(t => { const tg = tagOf[t.name]; if (tg) { t.tag = tg; t.tagBg = tagStyles[tg][0]; t.tagFg = tagStyles[tg][1]; } else { t.tag = ''; } });
     const tf = this.state.tagFilter;
     const shown = tf === 'All' ? testimonials : testimonials.filter(t => t.tag === tf);
