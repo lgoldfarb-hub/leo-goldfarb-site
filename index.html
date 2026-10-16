@@ -379,9 +379,8 @@ a:hover{color:#C93A1E}
   </div>
 
   <div style="margin-top:56px;display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
-    <sc-for list="{{ testimonialCols }}" as="col" hint-placeholder-count="3">
     <div style="flex-grow:1;flex-shrink:1;flex-basis:calc((680px - 100%) * 999);min-width:0;display:flex;flex-direction:column;gap:20px">
-    <sc-for list="{{ col }}" as="t" hint-placeholder-count="2">
+      <sc-for list="{{ leftCol }}" as="t" hint-placeholder-count="2">
       <figure style="margin:0;background:#FFFFFF;border:1px solid #E7E8EE;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:24px">
         <sc-if value="{{ t.tag }}" hint-placeholder-val="{{ true }}">
           <span style="align-self:flex-start;padding:4px 12px;border-radius:9999px;background:{{ t.tagBg }};color:{{ t.tagFg }};font:500 13px/18px Inter,sans-serif;letter-spacing:.01em">{{ t.tag }}</span>
@@ -400,9 +399,56 @@ a:hover{color:#C93A1E}
         </figcaption>
         <a href="{{ t.href }}" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:500 15px/20px Inter,sans-serif;color:#EE4E2E" style-hover="color:#C93A1E">Read full testimonial<svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M7.5 6H14v6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
       </figure>
-    </sc-for>
+      </sc-for>
+      </div>
+    <div style="flex-grow:2;flex-shrink:1;flex-basis:calc((680px - 100%) * 999);min-width:0;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+        <sc-for list="{{ rightCols }}" as="col" hint-placeholder-count="2">
+        <div style="flex-grow:1;flex-shrink:1;flex-basis:calc((440px - 100%) * 999);min-width:0;display:flex;flex-direction:column;gap:20px">
+        <sc-for list="{{ col }}" as="t" hint-placeholder-count="2">
+        <figure style="margin:0;background:#FFFFFF;border:1px solid #E7E8EE;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:24px">
+        <sc-if value="{{ t.tag }}" hint-placeholder-val="{{ true }}">
+          <span style="align-self:flex-start;padding:4px 12px;border-radius:9999px;background:{{ t.tagBg }};color:{{ t.tagFg }};font:500 13px/18px Inter,sans-serif;letter-spacing:.01em">{{ t.tag }}</span>
+        </sc-if>
+        <blockquote style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ t.paras }}" as="q" hint-placeholder-count="1">
+            <p style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.38;letter-spacing:-.005em;color:#16172B;text-wrap:pretty">{{ q }}</p>
+          </sc-for>
+        </blockquote>
+        <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #E7E8EE;padding-top:20px">
+          <img src="{{ t.photo }}" alt="{{ t.name }}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 auto;display:block">
+          <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+            <strong style="font-size:15px;line-height:20px;font-weight:600;color:#16172B">{{ t.name }}</strong>
+            <span style="font-size:13px;line-height:18px;color:#7A7C8F">{{ t.role }}</span>
+          </span>
+        </figcaption>
+        <a href="{{ t.href }}" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:500 15px/20px Inter,sans-serif;color:#EE4E2E" style-hover="color:#C93A1E">Read full testimonial<svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M7.5 6H14v6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </figure>
+        </sc-for>
+        </div>
+        </sc-for>
+      </div>
+      <sc-for list="{{ wideCards }}" as="t" hint-placeholder-count="0">
+      <figure style="margin:0;background:#FFFFFF;border:1px solid #E7E8EE;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:24px">
+        <sc-if value="{{ t.tag }}" hint-placeholder-val="{{ true }}">
+          <span style="align-self:flex-start;padding:4px 12px;border-radius:9999px;background:{{ t.tagBg }};color:{{ t.tagFg }};font:500 13px/18px Inter,sans-serif;letter-spacing:.01em">{{ t.tag }}</span>
+        </sc-if>
+        <blockquote style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ t.paras }}" as="q" hint-placeholder-count="1">
+            <p style="margin:0;font-family:Newsreader,Georgia,serif;font-size:22px;line-height:1.38;letter-spacing:-.005em;color:#16172B;text-wrap:pretty">{{ q }}</p>
+          </sc-for>
+        </blockquote>
+        <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #E7E8EE;padding-top:20px">
+          <img src="{{ t.photo }}" alt="{{ t.name }}" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 auto;display:block">
+          <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+            <strong style="font-size:15px;line-height:20px;font-weight:600;color:#16172B">{{ t.name }}</strong>
+            <span style="font-size:13px;line-height:18px;color:#7A7C8F">{{ t.role }}</span>
+          </span>
+        </figcaption>
+        <a href="{{ t.href }}" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:500 15px/20px Inter,sans-serif;color:#EE4E2E" style-hover="color:#C93A1E">Read full testimonial<svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 14L14 6M7.5 6H14v6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </figure>
+      </sc-for>
     </div>
-    </sc-for>
   </div>
   <p style="margin:56px 0 0;font-family:Newsreader,Georgia,serif;font-size:clamp(24px,2.6vw,30px);line-height:1.25;color:#16172B;text-align:center;text-wrap:pretty">Looks like I'm not completely unbearable to work with&nbsp;🥹</p>
 </section>
@@ -622,9 +668,17 @@ class Component extends DCLogic {
     testimonials.forEach(t => { const tg = tagOf[t.name]; if (tg) { t.tag = tg; t.tagBg = tagStyles[tg][0]; t.tagFg = tagStyles[tg][1]; } else { t.tag = ''; } });
     const tf = this.state.tagFilter;
     const shown = tf === 'All' ? testimonials : testimonials.filter(t => t.tag === tf);
+    const wideIn = { 'Ben Mort': tagOf['Ben Mort'] };
     const testimonialCols = [[], [], []];
     if (tf === 'All') shown.forEach((t, i) => testimonialCols[colOf[t.name] ?? i % 3].push(t));
-    else shown.forEach((t, i) => testimonialCols[i % 3].push(t));
+    else {
+      const hts = [0, 0, 0];
+      const len = t => (Array.isArray(t.quote) ? t.quote.join(' ') : String(t.quote || '')).length + 260;
+      shown.filter(t => wideIn[t.name] !== tf).forEach(t => { const k = hts.indexOf(Math.min(...hts)); testimonialCols[k].push(t); hts[k] += len(t); });
+    }
+    const leftCol = testimonialCols[0];
+    const rightCols = [testimonialCols[1], testimonialCols[2]];
+    const wideCards = tf === 'All' ? [] : shown.filter(t => wideIn[t.name] === tf);
     const tagFilters = ['All', 'My Client', 'My Direct Report', 'My Manager', 'My Teammate'].map(label => {
       const on = tf === label;
       const [cbg, cfg] = tagStyles[label] || ['#16172B', '#FFFFFF'];
@@ -656,7 +710,7 @@ class Component extends DCLogic {
       openShot: e => { const img = e.currentTarget.querySelector('img'); if (img) this.setState({ shot: img.currentSrc || img.src, shotAlt: img.alt }); },
       closeShot: e => { e.stopPropagation(); this.setState({ shot: null }); },
       shotImg: this.state.shot ? React.createElement('img', { src: this.state.shot, alt: this.state.shotAlt, onClick: e => e.stopPropagation(), style: { display: 'block', width: '100%', height: 'auto', borderRadius: 16, background: '#FFFFFF', cursor: 'default' } }) : null,
-      timeline, agents, principles, testimonials, testimonialCols, tagFilters
+      timeline, agents, principles, testimonials, testimonialCols, tagFilters, leftCol, rightCols, wideCards
     };
   }
 }
